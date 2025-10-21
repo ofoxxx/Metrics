@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "metrics"
+version = "0.1.0"
+description = "Sample Python project for collecting and visualizing metrics."
+authors = ["oleg.fokin@gmail.com"]
+license = "MIT"
+packages = [ { include = "metrics", from = "src" } ]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dash = "^2.0"
+python-dotenv = "^1.0"
+requests = "*"
+pandas = "*"
+plotly = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+
+[tool.poetry.scripts]
+metrics = "metrics.app:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = [
+    "unit: mark a test as a unit test",
+]
