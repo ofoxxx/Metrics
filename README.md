@@ -36,6 +36,28 @@ The app provides a dashboard with visualizations such as:
 
 Navigate to `http://127.0.0.1:8050/` in your browser to view the app.
 
+## Run in Docker
+
+To run the app in a Docker container, you can use the provided `Dockerfile`. First, build the Docker image:
+
+```bash
+docker build -t metrics .
+```
+
+Then, run the Docker container:
+
+```bash
+docker run -p 8050:8050 -dit --rm --name=metrics metrics
+```
+
+Then, navigate to `http://127.0.0.1:8050/` in your browser to view the app.
+
+To stop the container, use:
+
+```bash
+docker stop metrics
+```
+
 ## Project Layout
 
 - `src/metrics` - package source
